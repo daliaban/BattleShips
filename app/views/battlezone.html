@@ -1,0 +1,55 @@
+<div ng-controller="battleCtrl">
+    <h6>Colour Code: White: Available Cell; Green: Your Ship; Blue: Enemy Ship; Red: Your Fire; Orange: Enemy Fire; Grey: Unavailable Cell</h6>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Create a battle board:</h3>
+            <form name="boardSizeForm">
+                <div class="form-horizontal">
+                    <div class="form-group row">
+                        <label for="boardWidth" class="col-sm-6 control-label">Battle Board Width:</label>
+                        <div class="col-sm-4">
+                            <input id="boardWidth" type="number" class="form-control" name="boardWidth" ng-model="board.width" min="3" max="100" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="boardHeight" class="col-sm-6 control-label">Battle Board Height:</label>
+                        <div class="col-sm-4">
+                            <input id="boardHeight" type="number" class="form-control" name="boardHeight" ng-model="board.height" min="3" max="100" required>
+                        </div>
+                    </div>
+                </div>
+                <button ng-disabled="!boardSizeForm.$valid" class="btn btn-success" ng-click="createBattleBoard()">Create Battle Board</button>
+                <button id="resetBoard" class="btn btn-danger" ng-click="resetBoard()">Reset Battle Board</button>
+            </form>
+        </div>
+        <div class="col-sm-8" ng-include="'views/ships-status.html'"></div>
+    </div>
+    <div class="row">
+        <div ng-show="status=='start'"><h4>Click on an available cell to start building your ship</h4></div>
+        <div id="fireships" ng-show="status=='start' && AIShips.length && msg==''"><h4>..Or fire at enemy ships</h4><button class="btn btn-danger" ng-click="fire()">Start Firing</button></div>
+        <div ng-show="status=='building'"><h4>Click on an available cell to finish building your ship</h4></div>
+        <div ng-show="error" class="error"><h4>{{error}}</h4></div>
+        <div ng-show="msg" class="error"><h4>{{msg}}</h4></div>
+        <div ng-show="status=='finished'" class="formSizeDiv">
+            <form name="shipNameForm" class="form-inline">
+                <div class="form-group">
+                    <label for="shipName">Name Of The Ship:</label>
+                    <input id="shipName" type="text" class="form-control" name="shipName" ng-model="shipName" ng-pattern="/^[A-Za-z\s]{1,64}$/" required>
+                </div>
+                <button ng-disabled="!shipNameForm.$valid" class="btn btn-success" ng-click="doneShip()">Done</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="battleBoardDiv">
+            <table class="table table-bordered">
+                <tr ng-repeat="row in battleBoard track by $index">
+                    <td ng-click="selectPosition(col, $parent.$index, $index)" ng-repeat="col in row track by $index"
+                       ng-class="{1: 'userships', 0: 'available', 2: 'unavailable', 3: 'aiships', 4: 'damageU', 5: 'damageA'}[col]" >{{$parent.$index}} {{$index}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

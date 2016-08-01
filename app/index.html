@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Battle Ships</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="BattleShips">
+    <div class="maincontainer">
+        <div class="header">
+            <div class="headercontainer">
+                <h1>Battle The Enemy Ships</h1>
+            </div>
+        </div>
+        <div class="body container" ng-include="'views/battlezone.html'"></div>
+        <div class="footer">
+            <div class="footercontainer">
+                <div style="float: left">Powered by Dalia Banerjee</div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="scripts/battle.js"></script>
+    <script src="scripts/battleFactory.js"></script>
+    <script src="scripts/shipsFactory.js"></script>
+    <script src="scripts/boardFactory.js"></script>
+</body>
+</html>

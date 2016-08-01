@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-6" ng-show="userShips.length">
+        <h3>Your Ships</h3>
+        <table id="userShipsTable" class="table">
+            <thead>
+            <th>Name</th><th>Start</th><th>End</th><th>#Hit</th><th>Status</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="ship in userShips">
+                <td>{{ship.name}}</td><td>{{ship.start.parent}}{{ship.start.index}}</td><td>{{ship.end.parent}}{{ship.end.index}}</td><td>{{ship.hit}}</td><td>{{ship.status}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-6" ng-show="AIShips.length" >
+        <h3>Enemy Ships</h3>
+        <table id="AIShipsTable" class="table">
+            <thead>
+            <th>Name</th><th>Start</th><th>End</th><th>#Hit</th><th>Status</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="ship in AIShips">
+                <td>{{ship.name}}</td><td>{{ship.start.parent}}{{ship.start.index}}</td><td>{{ship.end.parent}}{{ship.end.index}}</td><td>{{ship.hit}}</td><td>{{ship.status}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

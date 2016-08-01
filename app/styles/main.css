@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+}
+
+.maincontainer {
+    position: relative;
+    min-height: 100%;
+}
+.header {
+    background-color:#880000;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.body {
+    padding-bottom:60px;   /* Height of the footer */
+}
+
+.footer {
+    background-color: #0d3349;
+    color: whitesmoke;
+    bottom: 0;
+    width: 100%;
+    position:absolute;
+    text-align: right;
+    font-size: 12px;
+}
+
+.footercontainer {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.formSizeDiv {
+    margin-top: 25px;
+}
+
+#battleBoardDiv{
+    max-width: 100%;
+    margin: 20px;
+}
+
+.userships {
+    background-color: green;
+}
+.available {
+    background-color: white;
+}
+
+.aiships {
+    background-color: dodgerblue;
+}
+.unavailable {
+    pointer-events: none;
+    background-color: lightgrey;
+}
+
+.damageU {
+    background-color: red;
+    pointer-events: none;
+}
+
+.damageA {
+    background-color: orange;
+    pointer-events: none;
+}
+
+.error {
+    color: red;
+}
+
+#userShipsTable thead {
+    color: green;
+}
+
+#AIShipsTable thead {
+    color: dodgerblue;
+}
