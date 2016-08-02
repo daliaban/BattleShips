@@ -9,12 +9,12 @@ angular.module('BattleShips')
 
         var randomFirstSelection = function(board){
             var position = {};
-            var randomPindex = Math.floor(Math.random() * board.length);
-            var randomIndex = Math.floor(Math.random() * board[0].length);
+            var randomPindex = Math.floor(Math.random() * board[0].length);
+            var randomIndex = Math.floor(Math.random() * board.length);
             var counter = 10;
             while (board[randomPindex][randomIndex] != 0 && counter > 0){
-                randomPindex = Math.floor(Math.random() * board.length);
-                randomIndex = Math.floor(Math.random() * board[0].length);
+                randomPindex = Math.floor(Math.random() * board[0].length);
+                randomIndex = Math.floor(Math.random() * board.length);
                 counter--;
             }
             if (board[randomPindex][randomIndex] != 0) {

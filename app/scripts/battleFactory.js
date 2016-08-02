@@ -7,12 +7,12 @@ angular.module('BattleShips')
 
         var fireRandom = function(board, enemy){
             var position = {};
-            var randomPindex = Math.floor(Math.random() * board.length);
-            var randomIndex = Math.floor(Math.random() * board[0].length);
+            var randomPindex = Math.floor(Math.random() * board[0].length);
+            var randomIndex = Math.floor(Math.random() * board.length);
             var counter = 10;
             while ( ((enemy== 'AI' && board[randomPindex][randomIndex] == 1) || (enemy== 'User' && board[randomPindex][randomIndex] == 3)  || board[randomPindex][randomIndex] == 4 || board[randomPindex][randomIndex] == 5) && counter > 0){
-                randomPindex = Math.floor(Math.random() * board.length);
-                randomIndex = Math.floor(Math.random() * board[0].length);
+                randomPindex = Math.floor(Math.random() * board[0].length);
+                randomIndex = Math.floor(Math.random() * board.length);
                 counter--;
             }
             if (((enemy== 'AI' && board[randomPindex][randomIndex] != 1) || (enemy== 'User' && board[randomPindex][randomIndex] != 3)) && board[randomPindex][randomIndex] != 4 && board[randomPindex][randomIndex] != 5) {
