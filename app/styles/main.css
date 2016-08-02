@@ -81,3 +81,31 @@ html, body {
 #AIShipsTable thead {
     color: dodgerblue;
 }
+
+.colors {
+    border: 1px solid black;
+}
+.white {
+    color: white;
+    background-color: white;
+}
+.green {
+    color: green;
+    background-color: green;
+}
+.blue {
+    color: blue;
+    background-color: blue;
+}
+.red {
+    color: red;
+    background-color: red;
+}
+.orange {
+    color: orange;
+    background-color: orange;
+}
+.grey {
+    color: lightgrey;
+    background-color: lightgrey;
+}
