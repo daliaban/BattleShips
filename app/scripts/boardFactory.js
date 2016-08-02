@@ -56,8 +56,8 @@ angular.module('BattleShips')
                 }
             }
 
-            if(parent != yLength){
-                for(i = parent+1; i < yLength; i++){
+            if(parent != xLength){
+                for(i = parent+1; i < xLength; i++){
                     if (tiles[i][index] == 1 || tiles[i][index] == 3) break;
                     tiles[i][index] = 0;
                     available = 1;
@@ -72,8 +72,8 @@ angular.module('BattleShips')
                 }
             }
 
-            if(index != xLength){
-                for(i = index+1; i < xLength; i++){
+            if(index != yLength){
+                for(i = index+1; i < yLength; i++){
                     if (tiles[parent][i] == 1 || tiles[parent][i] == 3) break;
                     tiles[parent][i] = 0;
                     available = 1;

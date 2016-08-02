@@ -34,8 +34,8 @@ angular.module('BattleShips')
         var randomSecondSelection = function(start,board){
             var parent = start.parent;
             var index = start.index;
-            var xLen = board.length-1;
-            var yLen = board[0].length-1;
+            var yLen = board.length-1;
+            var xLen = board[0].length-1;
             var i, direction='', wayX='', wayY='';
 
             if ((parent == 0 || parent == yLen) && index == 0 && board[parent][index+1] != 0) wayX = 'NA';
